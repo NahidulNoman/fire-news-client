@@ -8,22 +8,22 @@ import RightSideNav from "../pages/Shared/RightSideNav/RightSideNav";
 
 const Main = () => {
   return (
-    <div >
+    <div>
       <Header></Header>
       <div className="">
-      <Container >
-        <Row>
-          <Col lg={2} className='d-none d-lg-block'>
-            <LeftSideNav></LeftSideNav>
-          </Col>
-          <Col lg={7}>
-            <Outlet></Outlet>
-          </Col>
-          <Col lg={3}>
-            <RightSideNav></RightSideNav>
-          </Col>
-        </Row>
-      </Container>
+        <Container>
+          <Row>
+            <Col lg={2} className="d-none d-lg-block">
+              <LeftSideNav></LeftSideNav>
+            </Col>
+            <Col lg={7}>
+              <Outlet></Outlet>
+            </Col>
+            <Col lg={3}>
+              <RightSideNav></RightSideNav>
+            </Col>
+          </Row>
+        </Container>
       </div>
       <Footer></Footer>
     </div>
