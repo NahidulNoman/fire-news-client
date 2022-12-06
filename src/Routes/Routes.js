@@ -8,38 +8,44 @@ import SignUp from "../pages/Shared/SignUp/SignUp";
 import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
-    {
-        path : '/',
-        element : <Main></Main>,
-        children : [
-            {
-                path : '/',
-                element : <Home></Home>,
-                loader : () => fetch('https://fire-news-server.vercel.app/news')
-            },
-            {
-                path : '/home',
-                element : <Home></Home>,
-                loader : () => fetch('https://fire-news-server.vercel.app/news')
-            },
-            {
-                path : '/category/:id',
-                element : <Category></Category>,
-                loader : ({params}) => fetch(`https://fire-news-server.vercel.app/category/${params.id}`)
-            },
-            {
-                path : '/news/:id',
-                loader : ({params}) => fetch(`https://fire-news-server.vercel.app/news/${params.id}`),
-                element : <PrivateRouter><NewsDetails></NewsDetails></PrivateRouter>
-            },
-            {
-                path : '/login',
-                element : <LogIn></LogIn>
-            },
-            {
-                path : '/signUp',
-                element : <SignUp></SignUp>
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("https://fire-news-server.vercel.app/news"),
+      },
+      {
+        path: "/home",
+        element: <Home></Home>,
+        loader: () => fetch("https://fire-news-server.vercel.app/news"),
+      },
+      {
+        path: "/category/:id",
+        element: <Category></Category>,
+        loader: ({ params }) =>
+          fetch(`https://fire-news-server.vercel.app/category/${params.id}`),
+      },
+      {
+        path: "/news/:id",
+        loader: ({ params }) =>
+          fetch(`https://fire-news-server.vercel.app/news/${params.id}`),
+        element: (
+          <PrivateRouter>
+            <NewsDetails></NewsDetails>
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "/login",
+        element: <LogIn></LogIn>,
+      },
+      {
+        path: "/signUp",
+        element: <SignUp></SignUp>,
+      },
+    ],
+  },
+]);
