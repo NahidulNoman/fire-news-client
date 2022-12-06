@@ -9,7 +9,7 @@ const SignUp = () => {
   const [accept, setAccept] = useState(false);
   const [error, setError] = useState("");
 
-  const { createUser, updateUserProfile, emailVerify, setLoading } =
+  const { createUser, updateUserProfile, emailVerify } =
     useContext(AuthContext);
 
   const navigate = useNavigate();
